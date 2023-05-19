@@ -1,0 +1,81 @@
+<div
+	class="sidenav border-l border-l-lighter-gray relative"
+	[ngClass]="{ opened: isSideNavOpen }">
+	<div class="pt-6 px-6 pb-[120px] w-full h-full overflow-y-scroll">
+		<div class="w-full text-black flex flex-col gap-6">
+			<div class="flex justify-between items-center">
+				<h3 class="font-semibold text-lg">Filters</h3>
+				<p class="text-sm text-dark-red">Clear All</p>
+			</div>
+
+			<hr class="h-px bg-bgd-gray border-0" />
+
+			<div class="flex flex-col gap-4">
+				<div>
+					<h3 class="font-semibold text-lg">Price range</h3>
+					<p class="text-light-gray text-sm">
+						The average nightly price is $133
+					</p>
+				</div>
+
+				<div class="grid grid-cols-2 gap-[11.5px]">
+					<div class="flex flex-col gap-2">
+						<p class="text-light-gray text-xs">Min Price</p>
+						<div
+							class="py-[13px] px-4 transition-colors border border-input-gray hover:border-light-gray rounded-xl">
+							<p class="text-sm">$0</p>
+						</div>
+					</div>
+					<div class="flex flex-col gap-2">
+						<p class="text-light-gray text-xs">Max Price</p>
+						<div
+							class="py-[13px] px-4 transition-colors border border-input-gray hover:border-light-gray rounded-xl">
+							<p class="text-sm">$500+</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<hr class="h-px bg-bgd-gray border-0" />
+
+			<h3 class="font-semibold text-lg">Type of place</h3>
+
+			<div class="flex gap-3 items-start" *ngFor="let placeType of placeTypes">
+				<input
+					type="checkbox"
+					class="border-input-gray rounded h-5 w-5 shrink-0" />
+				<div class="flex flex-col gap-1">
+					<h5 class="text-base leading-5">{{ placeType.type }}</h5>
+					<p class="text-light-gray text-sm">{{ placeType.description }}</p>
+				</div>
+			</div>
+
+			<hr class="h-px bg-bgd-gray border-0" />
+
+			<h3 class="font-semibold text-lg">Rooms, beds, and baths</h3>
+
+			<div
+				class="flex flex-col gap-3"
+				*ngFor="let roomType of ['Bedrooms', 'Beds', 'Bathrooms']">
+				<h5 class="text-sm">{{ roomType }}</h5>
+				<div class="grid grid-cols-6 gap-[7.8px]">
+					<ng-container
+						*ngFor="let roomValue of roomValues; let roomValueIndex = index">
+						<div
+							class="text-black text-sm transition-colors border border-input-gray hover:border-light-gray py-[7px] px-6 rounded-3xl flex items-center justify-center"
+							[ngClass]="{ 'bg-black text-white': roomValueIndex === 0 }">
+							<p>{{ roomValue }}</p>
+						</div>
+					</ng-container>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div
+		class="absolute bottom-0 left-0 w-full bg-white flex justify-center items-center p-6 border-t border-t-lighter-gray">
+		<button
+			class="bg-[#E3B5BC] text-white p-3.5 rounded-xl w-full text-sm font-medium">
+			Show 836 Homes
+		</button>
+	</div>
+</div>

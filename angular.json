@@ -8,14 +8,29 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "standalone": true
+          "standalone": true,
+					"skipTests": true
         },
         "@schematics/angular:directive": {
-          "standalone": true
+          "standalone": true,
+					"skipTests": true
         },
+				"@schematics/angular:service": {
+					"skipTests": true
+				},
         "@schematics/angular:pipe": {
-          "standalone": true
-        }
+          "standalone": true,
+					"skipTests": true
+        },
+				"@schematics/angular:guard": {
+					"functional": true,
+					"skipTests": true
+				},
+				"@schematics/angular:interceptor": {
+					"functional": true,
+					"skipTests": true
+				}
+
       },
       "root": "",
       "sourceRoot": "src",
@@ -104,8 +119,22 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

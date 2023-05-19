@@ -1,0 +1,44 @@
+<section
+	class="pt-3 pb-[11px] px-8 flex justify-between items-center border-b border-b-lighter-gray sticky top-0 bg-white z-[1]">
+	<div class="bg-bgd-gray flex items-center rounded-xl">
+		<div class="p-3.5 bg-black rounded-lg cursor-pointer">
+			<app-icon icon="apps" sizeClasses="h-5 w-5"></app-icon>
+		</div>
+		<div class="p-3.5 cursor-pointer">
+			<app-icon icon="fold-apps" sizeClasses="h-5 w-5"></app-icon>
+		</div>
+	</div>
+
+	<div class="flex items-center gap-3">
+		<div
+			class="bg-bgd-gray py-3.5 px-4 flex gap-4 items-center rounded-xl cursor-pointer">
+			<p class="text-sm xl:w-[172px]">Anywhere</p>
+			<app-icon icon="caret-down" sizeClasses="h-5 w-5"></app-icon>
+		</div>
+		<div
+			class="bg-bgd-gray py-3.5 px-4 flex gap-3 items-center rounded-xl cursor-pointer">
+			<app-icon icon="calendar" sizeClasses="h-5 w-5"></app-icon>
+			<p class="text-sm">June 14 - 21</p>
+		</div>
+
+		<div class="bg-bgd-gray py-2 px-2 flex gap-4 items-center rounded-xl">
+			<div class="bg-[white] text-dark-red p-2 rounded-lg cursor-pointer">
+				<app-icon icon="minus" sizeClasses="h-4 w-4"></app-icon>
+			</div>
+
+			<p class="text-sm">4 guests</p>
+			<div class="bg-[white] text-dark-red p-2 rounded-lg cursor-pointer">
+				<app-icon icon="plus" sizeClasses="h-4 w-4"></app-icon>
+			</div>
+		</div>
+	</div>
+	<div #funnelContainer class="p-3.5 bg-bgd-gray rounded-lg cursor-pointer">
+		<app-icon icon="funnel" sizeClasses="h-5 w-5"> </app-icon>
+	</div>
+</section>
+
+<app-filters
+	[isSideNavOpen]="isSideNavOpen()"
+	(closeSideNav)="isSideNavOpen.set(!isSideNavOpen())"
+	(clickedOutsideFilters)="handleClickedOutsideFilters($event)">
+</app-filters>

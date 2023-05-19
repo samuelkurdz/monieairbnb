@@ -1,0 +1,13 @@
+.sidebar-active-link {
+	font-weight: 500;
+	&::after {
+		content: '';
+		border-right: 3px solid #d43b51;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 1px;
+		top: 0px;
+		pointer-events: none;
+	}
+}

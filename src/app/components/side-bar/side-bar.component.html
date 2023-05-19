@@ -1,0 +1,21 @@
+<aside
+	class="sticky top-[72px] h-full group w-[88px] transition-all duration-200 ease-linear hover:w-56">
+	<div class="border-r border-r-lighter-gray py-4">
+		<ul class="text-black flex flex-col gap-2">
+			<ng-container *ngFor="let menu of sideMenus; let menuIndex = index">
+				<div
+					class="relative flex items-center transition hover:bg-bgd-gray"
+					[ngClass]="{ 'sidebar-active-link': menuIndex === 0 }">
+					<li class="py-3.5 px-8 flex gap-3 items-center cursor-pointer">
+						<app-icon [icon]="menu.icon" sizeClasses="w-5 h-5"></app-icon>
+						<span
+							class="hidden text-sm capitalize whitespace-nowrap group-hover:block">
+							<!-- class="opacity-0 hidden text-sm capitalize whitespace-nowrap transition-opacity duration-200 ease-in group-hover:opacity-100 group-hover:block"> -->
+							{{ menu.name }}
+						</span>
+					</li>
+				</div>
+			</ng-container>
+		</ul>
+	</div>
+</aside>

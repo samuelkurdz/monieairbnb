@@ -1,0 +1,5 @@
+<svg
+	class="{{ sizeClasses ?? 'w-6 h-6' }} {{ classes }}"
+	(click)="oClick.emit()">
+	<use [attr.xlink:href]="'assets/icons/sprite.svg#' + icon"></use>
+</svg>
