@@ -1,0 +1,51 @@
+/* The Modal (background) */
+.modal {
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+
+	inset: 0px; // top:0 left: 0
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+	background-color: rgb(255, 255, 255);
+
+	display: flex;
+	flex-flow: column nowrap;
+	place-content: flex-start;
+	align-items: flex-start;
+	gap: 32px;
+	height: 100vh;
+	max-width: 1440px;
+	padding: 32px;
+	overflow: auto;
+
+
+	width: 75%;
+	z-index: 10;
+	transition-delay: 4s;
+}
+
+
+/* The Close Button */
+.close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+img {
+	object-fit: cover;
+}

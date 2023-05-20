@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from 'src/app/components/icon/icon.component';
+import { SingleHomeComponent } from 'src/app/components/single-home/single-home.component';
 
 @Component({
 	selector: 'app-stays',
 	standalone: true,
-	imports: [CommonModule, IconComponent],
+	imports: [CommonModule, IconComponent, SingleHomeComponent],
 	templateUrl: './stays.component.html',
 	styleUrls: ['./stays.component.scss'],
 })
@@ -111,4 +112,6 @@ export default class StaysComponent {
 			rating: 4.87,
 		},
 	];
+
+	showSingleHome = false;
 }

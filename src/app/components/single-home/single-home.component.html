@@ -1,0 +1,386 @@
+<div class="overlay">
+	<div
+		class="fixed inset-0 z-10 bg-[#11111166]"
+		[ngClass]="{
+			'block': showModal,
+			'hidden': !showModal,
+		}"></div>
+	<!-- Modal content -->
+	<div
+		class="flex items-start justify-end gap-4 fixed top-0 left-0 z-20 transition-all duration-500 transform w-full"
+		[ngClass]="showModal ? 'translate-x-0' : 'translate-x-full'">
+		<button
+			(click)="emitCloseModal.emit()"
+			class="h-9 w-9 flex items-center justify-center rounded-full mt-4 transition-colors duration-500 text-black hover:text-white bg-white hover:bg-black">
+			<app-icon icon="cancel" sizeClasses="w-4 h-4"></app-icon>
+		</button>
+		<div class="modal-content">
+			<ng-container [ngTemplateOutlet]="imageContainerRef"></ng-container>
+			<div class="w-full flex gap-8">
+				<ng-container [ngTemplateOutlet]="leftDetailsRef"></ng-container>
+				<ng-container [ngTemplateOutlet]="rightDetailsRef"></ng-container>
+			</div>
+		</div>
+	</div>
+</div>
+
+<ng-template #imageContainerRef>
+	<div class="h-[480px] flex gap-4">
+		<div class="basis-[60.7%] relative">
+			<img
+				class="basis-[60.7%] h-full w-full rounded-[20px]"
+				src="https://framerusercontent.com/images/0RUEx3es60Z3CuB1eFkBxcPxmA.webp"
+				alt="main" />
+			<div
+				class="absolute left-4 bottom-4 py-2 px-4 bg-white text-sm rounded-xl">
+				<p>View All Photos</p>
+			</div>
+		</div>
+		<div class="basis-[39.3%] grid grid-rows-2 gap-4">
+			<img
+				class="h-full w-full rounded-[20px]"
+				src="https://framerusercontent.com/images/zeX5Tu6LII3hUoS8pW7mPBKT1qs.webp"
+				alt="main" />
+			<img
+				class="h-full w-full rounded-[20px]"
+				src="https://framerusercontent.com/images/OkcW86CbpLKD4v3ivzgsilMcBTQ.webp"
+				alt="main" />
+		</div>
+	</div>
+</ng-template>
+
+<ng-template #leftDetailsRef>
+	<section class="flex-1 flex flex-col gap-10">
+		<div class="flex flex-col gap-8">
+			<div class="flex flex-col gap-3">
+				<div
+					class="flex items-center gap-2 py-[7px] px-[11px] border border-lighter-gray w-fit rounded-xl">
+					<app-icon icon="trophy" sizeClasses="w-5 h-5"></app-icon>
+					<p class="text-sm">Superhost</p>
+				</div>
+				<div class="flex justify-between items-center">
+					<h3 class="text-[32px] leading-10 font-medium">
+						Numero 22 - Lake Como - Design Living & Lake View
+					</h3>
+					<div class="flex gap-[9px] items-center">
+						<span class="p-2.5 bg-bgd-gray rounded-full">
+							<app-icon icon="upload" sizeClasses="w-4 h-4"></app-icon>
+						</span>
+						<span class="p-2.5 bg-bgd-gray rounded-full">
+							<app-icon icon="love" sizeClasses="w-4 h-4"></app-icon>
+						</span>
+					</div>
+				</div>
+				<p class="text-light-gray text-base leading-5">
+					Tulum, Quintana Roo, Mexico
+				</p>
+			</div>
+			<div class="flex gap-10 items-center">
+				<div class="flex gap-3 items-center">
+					<app-icon icon="guests" sizeClasses="w-5 h-5"></app-icon>
+					<p class="text-sm">6 guests</p>
+				</div>
+				<div class="flex gap-3 items-center">
+					<app-icon icon="bedrooms" sizeClasses="w-5 h-5"></app-icon>
+					<p class="text-sm">2 bedrooms</p>
+				</div>
+				<div class="flex gap-3 items-center">
+					<app-icon icon="beds" sizeClasses="w-5 h-5"></app-icon>
+					<p class="text-sm">3 beds</p>
+				</div>
+				<div class="flex gap-3 items-center">
+					<app-icon icon="baths" sizeClasses="w-5 h-5"></app-icon>
+					<p class="text-sm">3 baths</p>
+				</div>
+			</div>
+		</div>
+		<hr class="h-px bg-[#1111111a] border-0" />
+		<div class="grid grid-cols-3 gap-8">
+			<div class="flex flex-col gap-4">
+				<app-icon icon="workspaces" sizeClasses="w-14 h-14"></app-icon>
+				<div class="flex flex-col gap-2">
+					<h5 class="leading-5 font-medium">Dedicated workspace</h5>
+					<p class="text-sm text-light-gray">
+						A private room with wifi that’s well-suited for working.
+					</p>
+				</div>
+			</div>
+			<div class="flex flex-col gap-4">
+				<app-icon icon="selfcheckin" sizeClasses="w-14 h-14"></app-icon>
+				<div class="flex flex-col gap-2">
+					<h5 class="leading-5 font-medium">Self check-in</h5>
+					<p class="text-sm text-light-gray">
+						Check yourself in with the keypad.
+					</p>
+				</div>
+			</div>
+			<div class="flex flex-col gap-4">
+				<app-icon icon="freecancel" sizeClasses="w-14 h-14"></app-icon>
+				<div class="flex flex-col gap-2">
+					<h5 class="leading-5 font-medium">Free cancellation before Jul 25</h5>
+					<p class="text-sm text-light-gray">
+						A private room with wifi that’s well-suited for working.
+					</p>
+				</div>
+			</div>
+		</div>
+		<hr class="h-px bg-[#1111111a] border-0" />
+		<div class="flex flex-col gap-8">
+			<div class="flex flex-col gap-2">
+				<h5 class="text-lg leading-6 font-semibold">About this space</h5>
+				<p class="text-sm text-light-gray">
+					Enjoy a quiet getaway in this charming cottage renovated, designed,
+					and owned by Chip and Joanna Gaines. Originally the carriage house for
+					Hillcrest Estate, this home includes one bedroom, one bath, an office
+					nook and a private back patio. This makes it the perfect getaway for a
+					party of two, or if you’re stopping through town and need a restful
+					place to retreat.
+				</p>
+			</div>
+			<div class="flex flex-col gap-2">
+				<h5 class="leading-5 font-medium">The space</h5>
+				<p class="text-sm text-light-gray">
+					An open living, dining, and kitchen area provide ample room in this
+					cozy cottage. French double doors lead you out to the back patio to
+					enjoy your own private outdoor space. A dedicated, covered parking
+					spot for your use. The parking lot is shared with Hillcrest Estate
+					guests.
+				</p>
+			</div>
+			<p class="text-dark-red font-semibold text-sm">Read more</p>
+		</div>
+		<hr class="h-px bg-[#1111111a] border-0" />
+		<div class="flex flex-col gap-8">
+			<div class="flex justify-between items-center">
+				<h4 class="text-lg leading-6 font-semibold">Reviews</h4>
+				<p class="text-sm leading-5 flex items-center gap-2">
+					<app-icon icon="star" sizeClasses="w-4 h-4"></app-icon>
+					<span>4.99</span>
+					<span>— 124 reviews</span>
+				</p>
+			</div>
+			<section class="flex flex-col gap-4">
+				<div
+					class="flex flex-col gap-6 p-6 rounded-[20px] border border-[#1111111a]">
+					<div
+						class="flex justify-between"
+						*ngFor="let review of reviewsSummary">
+						<p class="text-sm font-medium">{{ review.metric }}</p>
+						<div class="flex items-center gap-2">
+							<div class="w-[380px] bg-[#EAEAEA] rounded-full h-2">
+								<div
+									class="bg-[#CA325E] h-full rounded-full"
+									[ngStyle]="{ width: (review.rating / 5) * 100 + '%' }"
+									style="width: 45%"></div>
+							</div>
+							<p class="text-sm leading-5">
+								{{ review.rating | number : '1.1-1' }}
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<section class="grid grid-cols-2 gap-4">
+					<div
+						*ngFor="let recommender of recommenders"
+						class="flex flex-col gap-6 p-6 border border-[#1111111a] rounded-[20px]">
+						<div class="flex gap-4 items-center">
+							<img
+								class="w-14 h-14 rounded-full"
+								[src]="recommender.img"
+								[alt]="recommender.name" />
+							<div class="flex flex-col gap-1">
+								<p class="font-medium">{{ recommender.name }}</p>
+								<p class="text-xs text-light-gray">March 2023</p>
+							</div>
+						</div>
+						<p class="text-sm leading-5">
+							{{ recommender.talk }}
+						</p>
+					</div>
+				</section>
+			</section>
+			<p class="text-dark-red font-semibold text-sm">View more</p>
+		</div>
+
+		<hr class="h-px bg-[#1111111a] border-0" />
+
+		<!-- map section -->
+		<div class="flex flex-col gap-8">
+			<h4 class="text-lg leading-6 font-semibold">Where you'll be</h4>
+			<div class="w-full overflow-hidden rounded-[20px]">
+				<google-map width="100%" [zoom]="zoom" [center]="center">
+					<map-marker [position]="center"></map-marker
+				></google-map>
+			</div>
+			<div class="flex flex-col gap-2">
+				<h5 class="leading-5 font-medium">Laglio, Lombardia, Italy</h5>
+				<p class="text-sm text-light-gray">
+					The property, given its close proximity to the refreshing hillside
+					town of Tagaytay and clear blue beaches of Nasugbu, provides a quick
+					escape from the hustle and bustle of city life.
+				</p>
+			</div>
+			<p class="text-dark-red font-semibold text-sm">View more</p>
+		</div>
+
+		<hr class="h-px bg-[#1111111a] border-0" />
+
+		<!-- host section -->
+		<div class="flex flex-col gap-8">
+			<h4 class="text-lg leading-6 font-semibold">Host</h4>
+			<div class="flex flex-col gap-6">
+				<div class="flex justify-between items-center">
+					<div class="flex gap-4 items-center">
+						<img
+							class="w-14 h-14 rounded-full"
+							src="https://framerusercontent.com/images/BJlejSA7m05FYSEDxGymG3qB2w.jpg"
+							alt="host"
+							srcset="
+								https://framerusercontent.com/images/BJlejSA7m05FYSEDxGymG3qB2w.jpg?scale-down-to=512   512w,
+								https://framerusercontent.com/images/BJlejSA7m05FYSEDxGymG3qB2w.jpg?scale-down-to=1024 1024w,
+								https://framerusercontent.com/images/BJlejSA7m05FYSEDxGymG3qB2w.jpg?scale-down-to=2048 2048w,
+								https://framerusercontent.com/images/BJlejSA7m05FYSEDxGymG3qB2w.jpg?scale-down-to=4096 4096w,
+								https://framerusercontent.com/images/BJlejSA7m05FYSEDxGymG3qB2w.jpg                    6000w
+							"
+							sizes="56px" />
+						<div class="flex flex-col gap-1">
+							<p class="font-medium">Hosted by Brenda</p>
+							<p class="text-xs text-light-gray">Joined in August 2014</p>
+						</div>
+					</div>
+					<div
+						class="w-fit py-[13px] px-4 transition-colors border border-input-gray hover:border-dark-red rounded-xl">
+						<p class="text-sm">Contact Host</p>
+					</div>
+				</div>
+				<div class="flex gap-10 items-center">
+					<div class="flex gap-3 items-center">
+						<app-icon icon="star" sizeClasses="w-5 h-5"></app-icon>
+						<p class="text-sm">2,635 reviews</p>
+					</div>
+					<div class="flex gap-3 items-center">
+						<app-icon icon="shield" sizeClasses="w-5 h-5"></app-icon>
+						<p class="text-sm">Identity verified</p>
+					</div>
+					<div class="flex gap-3 items-center">
+						<app-icon icon="trophy" sizeClasses="w-5 h-5"></app-icon>
+						<p class="text-sm">Superhost</p>
+					</div>
+				</div>
+				<p class="text-sm">
+					As a mother of 4, living in Solana Beach for 25+ years, I love to help
+					families enjoy our beautiful area. Vacations are special and we do our
+					very best to make them affordable, enjoy…
+				</p>
+				<p class="text-dark-red font-semibold text-sm">View more</p>
+			</div>
+		</div>
+	</section>
+</ng-template>
+
+<ng-template #rightDetailsRef>
+	<section class="w-[360px] flex flex-col gap-5 sticky -top-8 h-min pt-10">
+		<div
+			class="bg-bgd-gray rounded-[20px] border border-[#1111110a] p-6 flex flex-col gap-6">
+			<div class="flex justify-between">
+				<h5 class="flex gap-2 items-end">
+					<span class="text-2xl font-semibold">$199</span>
+					<span class="text-sm leading-7">/ night</span>
+				</h5>
+				<p class="flex items-center gap-2">
+					<app-icon icon="star" sizeClasses="w-4 h-4"></app-icon>
+					<span class="text-sm">4.97</span>
+				</p>
+			</div>
+			<section class="flex flex-col gap-4">
+				<div class="grid grid-cols-2 gap-3">
+					<div class="flex flex-col gap-1">
+						<p class="text-xs leading-5 text-light-gray">Check In</p>
+						<div
+							class="bg-white py-3.5 px-4 flex gap-3 items-center rounded-xl cursor-pointer">
+							<app-icon icon="calendar" sizeClasses="h-5 w-5"></app-icon>
+							<p class="text-sm">6/14/2023</p>
+						</div>
+					</div>
+					<div class="flex flex-col gap-1">
+						<p class="text-xs leading-5 text-light-gray">Check Out</p>
+						<div
+							class="bg-white py-3.5 px-4 flex gap-3 items-center rounded-xl cursor-pointer">
+							<app-icon icon="calendar" sizeClasses="h-5 w-5"></app-icon>
+							<p class="text-sm">6/14/2023</p>
+						</div>
+					</div>
+				</div>
+				<div class="flex flex-col gap-1">
+					<p class="text-xs leading-5 text-light-gray">Guests</p>
+					<div
+						class="bg-white py-3.5 px-4 flex gap-4 items-center justify-between rounded-xl cursor-pointer">
+						<p class="text-sm">1 guest</p>
+						<app-icon icon="caret-down" sizeClasses="h-5 w-5"></app-icon>
+					</div>
+				</div>
+			</section>
+			<hr class="h-px bg-[#1111110a] border-0" />
+			<section class="flex flex-col gap-3">
+				<div class="flex justify-between items-center">
+					<p class="text-sm font-medium flex items-center gap-1">
+						<span>6 nights</span>
+						<app-icon icon="exclamation" sizeClasses="w-3 h-3"></app-icon>
+					</p>
+					<p class="text-sm">$2,199</p>
+				</div>
+				<div class="flex justify-between items-center">
+					<p class="text-sm font-medium flex items-center gap-1">
+						<span>Cleaning fee</span>
+						<app-icon icon="exclamation" sizeClasses="w-3 h-3"></app-icon>
+					</p>
+					<p class="text-sm">$85</p>
+				</div>
+				<div class="flex justify-between items-center">
+					<p class="text-sm font-medium flex items-center gap-1">
+						<span>Airbnb service fee</span>
+						<app-icon icon="exclamation" sizeClasses="w-3 h-3"></app-icon>
+					</p>
+					<p class="text-sm">$322</p>
+				</div>
+			</section>
+			<hr class="h-px bg-[#1111110a] border-0" />
+			<div class="flex justify-between items-start">
+				<div class="flex flex-col gap-1">
+					<h5 class="font-semibold text-base leading-5">Total</h5>
+					<p class="text-xs leading-5 text-light-gray">Before taxes</p>
+				</div>
+				<p class="text-base leading-5">$2,606</p>
+			</div>
+			<button
+				class="bg-[#D03856] hover:bg-[#CB335E] text-white p-3.5 rounded-xl w-full text-sm font-medium">
+				Reserve
+			</button>
+		</div>
+		<div
+			class="bg-[#d43b510a] rounded-[20px] border border-[#1111110a] p-6 flex gap-6 items-start">
+			<svg
+				width="40"
+				height="40"
+				viewBox="0 0 40 40"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				id="svg-914990552_654">
+				<path
+					d="M27.1833 5L35.1216 14.2617L19.9999 34.1958L4.87744 14.2617L12.8158 5H27.1833Z"
+					fill="#E31C5F"
+					fill-opacity="0.2"></path>
+				<path
+					d="M28.7166 1.66663L39.4035 14.1347L20 39.7121L0.596436 14.1347L11.2834 1.66663H28.7166ZM13.7856 15H3.3456L18.5614 35.0575L13.7856 15ZM36.6531 15H26.2131L21.4381 35.0575L36.6531 15ZM24.5006 15H15.4989L20 33.9033L24.5006 15ZM11.2339 4.28329L3.47727 13.3333H13.3889L11.2339 4.28329ZM27.2781 3.33246H12.7214L15.1023 13.3333H24.8973L27.2781 3.33246ZM28.7648 4.28329L26.6098 13.3333H36.5214L28.7648 4.28329Z"
+					fill="#E31C5F"></path>
+			</svg>
+			<div class="flex flex-col gap-1">
+				<h5 class="font-semibold text-base leading-5">This is a rare find</h5>
+				<p class="text-sm leading-5 text-light-gray">
+					Kathryn's place on Airbnb is usually fully booked.
+				</p>
+			</div>
+		</div>
+	</section>
+</ng-template>
