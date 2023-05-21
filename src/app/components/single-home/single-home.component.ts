@@ -70,6 +70,57 @@ export class SingleHomeComponent implements OnInit {
 		},
 	];
 
+	offerings = [
+		{
+			title: 'Kitchen',
+			icon: 'guests',
+		},
+		{
+			title: 'Private patio or balcony',
+			icon: 'guests',
+		},
+		{
+			title: 'Centrail air conditioning',
+			icon: 'guests',
+		},
+		{
+			title: 'Dedicated workspaces',
+			icon: 'bedrooms',
+		},
+		{
+			title: 'Wifi',
+			icon: 'bedrooms',
+		},
+		{
+			title: 'Heating',
+			icon: 'bedrooms',
+		},
+		{
+			title: '55” 4k TV',
+			icon: 'beds',
+		},
+		{
+			title: '1 parking space',
+			icon: 'beds',
+		},
+		{
+			title: 'Security cameras',
+			icon: 'beds',
+		},
+		{
+			title: 'Free dryer - in unit',
+			icon: 'baths',
+		},
+		{
+			title: 'Free washer - in unit',
+			icon: 'baths',
+		},
+		{
+			title: 'Ceiling fans',
+			icon: 'baths',
+		},
+	];
+
 	ngOnInit() {
 		navigator.geolocation.getCurrentPosition((position) => {
 			this.center = {
