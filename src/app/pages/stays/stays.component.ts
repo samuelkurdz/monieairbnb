@@ -51,7 +51,7 @@ export default class StaysComponent {
 		{
 			image:
 				'https://framerusercontent.com/images/0RUEx3es60Z3CuB1eFkBxcPxmA.webp',
-			title: 'Bohemian &amp; Spacious / Private Pool and Garden',
+			title: 'Bohemian & Spacious / Private Pool and Garden',
 			address: 'Tulum, Quintana Roo, Mexico',
 			price: 199,
 			rate: 'night',

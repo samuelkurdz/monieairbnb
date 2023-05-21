@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+	Component,
+	EventEmitter,
+	Input,
+	OnChanges,
+	OnInit,
+	Output,
+	SimpleChanges,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { GoogleMapsModule } from '@angular/google-maps';
@@ -10,7 +18,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 	templateUrl: './single-home.component.html',
 	styleUrls: ['./single-home.component.scss'],
 })
-export class SingleHomeComponent implements OnInit {
+export class SingleHomeComponent implements OnInit, OnChanges {
 	@Input() showModal = false;
 	@Output() emitCloseModal = new EventEmitter();
 
@@ -120,6 +128,10 @@ export class SingleHomeComponent implements OnInit {
 			icon: 'baths',
 		},
 	];
+
+	ngOnChanges(changes: SimpleChanges): void {
+		document.body.style.overflow = this.showModal ? 'hidden' : '';
+	}
 
 	ngOnInit() {
 		navigator.geolocation.getCurrentPosition((position) => {
